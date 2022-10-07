@@ -149,9 +149,6 @@ select {
 /* General Styling  */
 body {
     display: grid;
-    /* overflow: hidden; */
-    min-height: 100vh;
-    /* padding-inline: 1rem; */
     place-content: center;
     font-weight: var(--fw-reg);
     background: var(--primary-bg);
@@ -172,6 +169,7 @@ main {
     color: var(--text-800);
     font-weight: var(--fw-bold);
     justify-content: space-between;
+    transition: var(--ff-primary-transition);
 }
 .heading-title h1 {
   font-size: var(--size-800);
@@ -393,9 +391,6 @@ input {
   font-size: var(--size-400);
   font-weight: var(--fw-reg);
 }
-.detail-box-content p {
-  margin-left: 5px;
-}
 .detail-box-content a {
   text-decoration: none;
   color: var(--text-700);
@@ -431,3 +426,9 @@ input {
 /* * {
     outline: 2px solid limegreen;
 } */
+
+
+/* Margin Utility Class  */
+.margin-inline-start-100 {
+  margin-inline-start: 5px;
+}
