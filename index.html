@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title>GitHub User Search App</title>
+  <title>DevFinder - GitHub User Search App</title>
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -36,15 +36,20 @@
       </div>
     </div>
 
-    <div class="main-contentBox">
-      <img src="assets/Oval.svg" alt="Avatar for Large Screen">
-        <div>
+    <div class="main-content-box">
+      <img class="desktop-avatar | " src="assets/Oval.svg" alt="Avatar for Large Screen">
+
+      <div class="main-box">
+
+        <div class="profile">
         <img src="assets/Oval.svg" alt="Avatar for Small Screen">
-        <div>
-          <h1 id="username">The Octocat</h1>
-          <a href=""><h3>@Octocat</h3></a>
+        <div class="profile-wrapper"> 
+          <div class="profile-wrapper-content">
+            <h1 id="username">The Octocat</h1>
+            <a href="">@Octocat</a>
+          </div>
+          <h3>Joined 25 Jan 2011</h3>
         </div>
-        <h3>Joined <span>25 Jan 2011</span> </h3>
       </div>
 
       <div class="user-bio">
@@ -52,34 +57,46 @@
       </div>
 
       <div class="number-box">
-        <div>
+        <div class="number-box-content">
           <h3>Repos</h3>
-          <h1>8</h1>
+          <p>8</p>
         </div>
 
-        <div>
+        <div class="number-box-content">
           <h3>Followers</h3>
-          <h1>3839</h1>
+          <p>383</p>
         </div>
 
-        <div>
+        <div class="number-box-content">
           <h3>Following</h3>
-          <h1>9</h1>
+          <p>9</p>
         </div>
       </div>
 
       <div class="detail-box">
-        <div class="detail-item">
+        <div class="detail-box-content">
           <img src="assets/icon-location.svg" alt="location">
-          <h3>San Francisco</h3>
+          <p>San Francisco</p>
         </div>
-        <div class="detail-item">
+
+        <div class="detail-box-content">
           <img src="assets/icon-twitter.svg" alt="Twitter">
-          <a href="">https://github.blog</a>
+          <a href="">Not Available</a>
+        </div>
+
+        <div class="detail-box-content">
+          <img src="assets/icon-website.svg" alt="Website">
+          <a class="link" href="">https://github.blog</a>
+        </div>
+
+        <div class="detail-box-content">
+          <img src="assets/icon-company.svg" alt="Company">
+          <p>agithub</p>
         </div>
 
       </div>
     </div>
+  </div>
 
   </main>
 
