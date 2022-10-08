@@ -51,7 +51,7 @@
 
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --primary-400: #0077ff;
     --text-400: #ffffff;
@@ -65,7 +65,7 @@
     --ff-hover: #90A4D4;
     --text-not-availabel: rgb(75, 106, 155, 1);
   }
-}
+} */
 
 .pointer {
     cursor: pointer;
