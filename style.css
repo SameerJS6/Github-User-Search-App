@@ -35,7 +35,21 @@
     --ff-secondray-transition: all 0.5s ease;
     --ff-hover: #222731;
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-400: #0077ff;
+    --text-400: #ffffff;
+    --text-700: #ffffff;
+    --text-800: #ffffff;
+    --text-no-result: hsl(0, 92%, 55%);
 
+    --primary-bg: #141D2F;
+    --secondary-bg: #1E2A47;
+
+    --ff-hover: #90A4D4;
+    --text-not-availabel: rgb(75, 106, 155, 1);
+  }
+}
 .DarkMode {
     --primary-400: #0077ff;
     --text-400: #ffffff;
