@@ -295,6 +295,7 @@ input {
 /* Avatars  */
 .desktop-avatar {
   display: none;
+  transition: var(--ff-secondray-transition);
 }
 .desktop-avatar, .profile > img {
   width: 100%;
@@ -303,6 +304,11 @@ input {
   border-radius: 50%;
   /* box-shadow: 0 30px 45px rgba(23, 23, 23, 0.1); */
 }
+.desktop-avatar:hover, .profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 60px rgb(22, 22, 22, 0.15)
+}
+
 @media (min-width: 40em) {
   .desktop-avatar, .profile > img {
     padding: 0.3rem;
@@ -314,6 +320,9 @@ input {
   gap: 1rem;
   display: flex;
   flex-direction: row;
+}
+.profile-img {
+  transition: var(--ff-secondray-transition);
 }
 .profile-wrapper {
   display: flex;
