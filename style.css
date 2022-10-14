@@ -19,6 +19,7 @@
     --size-400: 0.8125rem; /* 13px */
     --size-500: 0.9375rem; /* 15px */ 
     --size-600: 1rem; /* 16px */
+    --size-650: 1.125rem; /* 18px */
     --size-700: 1.375rem; /* 22px */
     --size-800: 1.625rem; /* 26px */
 
@@ -340,12 +341,36 @@ input {
   font-weight: var(--fw-reg);
   font-size: var(--size-300);
 }
+
+/* Username id underline hover effect  */
+.user-id-hover {
+  position: relative;
+  overflow: hidden;
+  padding-block-end: .1rem;
+  transform: perspective(1px) translateZ(0);
+}
+.user-id-hover::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0%;
+  right: 100%;
+  bottom: 0;
+  background: var(--primary-400);
+  height: 2px;
+  transition: all .3s ease-out;
+}
+.user-id-hover:hover::after {
+  left: 0;
+  right: 0;
+}
 .profile-wrapper h3 {
   color: var(--text-400);
   font-size: var(--size-300);
   font-weight: var(--fw-reg);
   transition: var(--ff-secondray-transition);
 }
+
 /* Media Quire for Main-content box and avatar  */
 @media (min-width: 55em) {
   .main-content-box {
@@ -426,7 +451,7 @@ input {
 .link {
   position: relative;
   overflow: hidden;
-  padding-block-end: .1rem;
+  padding-block-end: .2rem;
   transform: perspective(1px) translateZ(0);
 }
 .link::before {
@@ -447,6 +472,44 @@ input {
 @media (min-width: 30em) {
   .detail-box {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Media Quires for font size  */
+@media (min-width:45em) {
+  .search-box {
+    padding-inline: 2rem .6rem;
+  }
+  .icon-bar {
+    gap: 1.25rem;
+  }
+  input {
+    font-size: var(--size-650);
+  }
+  .btn {
+    font-size: var(--size-600);
+    padding: 0.78125rem 1.4375rem 0.84375rem 1.5rem;
+  }
+  .profile-wrapper-content h1 {
+    font-size: var(--size-800);
+  }
+  .profile-wrapper-content a {
+    font-size: var(--size-500);
+  }
+  .profile-wrapper h3 {
+    font-size: var(--size-600);
+  }
+  .user-bio {
+    font-size: var(--size-500);
+  }
+  .number-box-content {
+    font-size: var(--size-700);
+  }
+  .number-box-content h3 {
+    font-size: var(--size-400);
+  }
+  .detail-box-content {
+    font-size: var(--size-500);
   }
 }
 /* * {
