@@ -25,71 +25,71 @@
     <div class="search-box">
       <div class="icon-bar">
         <img src="assets/icon-search.svg" alt="Search-icon">
-        <input type="text" placeholder="Search Github Username...">
+        <input data-input type="text" placeholder="Search Github Username...">
       </div>
 
       <div class="btn-no-result">
-        <span class="no-result | none text-red">No results</span>
-        <button class="btn">Search</button>
+        <span no-result class="no-result | none text-red">No results</span>
+        <button submit-button class="btn">Search</button>
       </div>
     </div>
 
     <div class="main-content-box">
-      <img class="desktop-avatar | " src="assets/Oval.svg" alt="Avatar for Large Screen">
+      <img data-avatar class="desktop-avatar | " src="assets/Oval.svg" alt="Avatar for Large Screen">
 
       <div class="main-box">
 
         <div class="profile">
-        <img class="profile-img" src="assets/Oval.svg" alt="Avatar for Small Screen">
+        <img data-avatar class="profile-img" src="assets/Oval.svg" alt="Avatar for Small Screen">
         <div class="profile-wrapper"> 
           <div class="profile-wrapper-content">
-            <h1 id="username">The Octocat</h1>
-            <a class="user-id-hover" href="">@Octocat</a>
+            <h1 data-username id="username">The Octocat</h1>
+            <a data-link class="user-id-hover" href="https://github.com/octocat" target="_blank">@Octocat</a>
           </div>
-          <h3>Joined 25 Jan 2011</h3>
+          <h3 date-of-join>Joined 25 Jan 2011</h3>
         </div>
       </div>
 
       <div class="user-bio">
-        <p id="bio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+        <p user-bio id="bio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
       </div>
 
       <div class="number-box">
         <div class="number-box-content">
           <h3>Repos</h3>
-          <p>8</p>
+          <p data-repo>8</p>
         </div>
 
         <div class="number-box-content">
           <h3>Followers</h3>
-          <p>383</p>
+          <p data-followers>383</p>
         </div>
 
         <div class="number-box-content">
           <h3>Following</h3>
-          <p>9</p>
+          <p data-following>9</p>
         </div>
       </div>
 
       <div class="detail-box">
         <div class="detail-box-content">
           <img src="assets/icon-location.svg" alt="location">
-          <p class="margin-inline-start-100">San Francisco</p>
+          <p data-location class="margin-inline-start-100">San Francisco</p>
         </div>
 
         <div class="detail-box-content">
           <img src="assets/icon-twitter.svg" alt="Twitter">
-          <a href="">Not Available</a>
+          <a data-twitter class="twitter" href="" target="_blank">Not Available</a>
         </div>
 
         <div class="detail-box-content">
           <img src="assets/icon-website.svg" alt="Website">
-          <a class="link" href="">https://github.blog</a>
+          <a data-website class="link" href="https://github.blog" target="_blank">https://github.blog</a>
         </div>
 
         <div class="detail-box-content">
           <img src="assets/icon-company.svg" alt="Company">
-          <p>agithub</p>
+          <p data-company>agithub</p>
         </div>
 
       </div>
