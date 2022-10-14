@@ -448,13 +448,13 @@ input {
 }
 
 /* Undeline Hover For link  */
-.link {
+.link, .twitter {
   position: relative;
   overflow: hidden;
   padding-block-end: .2rem;
   transform: perspective(1px) translateZ(0);
 }
-.link::before {
+.link::before, .twitter::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -465,7 +465,7 @@ input {
   height: 2px;
   transition: all .3s ease-out;
 }
-.link:hover:before{
+.link:hover:before, .twitter:hover::before {
   left: 0;
   right: 0;
 }
