@@ -14,13 +14,14 @@ const Twitter = document.querySelector('[data-twitter]');
 const Website = document.querySelector('[data-website]');
 const Company = document.querySelector('[data-company]');
 
-
+// This function is for only removing whtie space in between name from input 
 function InputName() {
     const InputName = Input.value;
     const SearchName = InputName.split(' ').join('')
     return SearchName;
 }
 
+// Fetching the data from API and Feeding it to DOM 
 function api() {
     fetch('https://api.github.com/users/'+InputName())
     .then((result) => result.json())
@@ -61,6 +62,7 @@ function api() {
     })
 }
 
+// Event Listener for Submit button and call back for api function above 
 SubmitBtn.addEventListener('click', ()=> {
     api();
 })
