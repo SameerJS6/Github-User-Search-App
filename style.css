@@ -292,7 +292,9 @@ input {
   transition: var(--ff-primary-transition);
   box-shadow: 0 30px 45px rgb(22, 22, 22, 0.1);
 }
-
+.main-box {
+  width: 100%;
+}
 /* Avatars  */
 .desktop-avatar {
   display: none;
@@ -372,7 +374,7 @@ input {
 }
 
 /* Media Quire for Main-content box and avatar  */
-@media (min-width: 55em) {
+@media (min-width: 56em) {
   .main-content-box {
     gap: 2rem;
     display: flex;
@@ -476,7 +478,7 @@ input {
 }
 
 /* Media Quires for font size  */
-@media (min-width:45em) {
+@media (min-width: 45em) {
   .search-box {
     padding-inline: 2rem .6rem;
   }
@@ -520,4 +522,16 @@ input {
 /* Margin Utility Class  */
 .margin-inline-start-100 {
   margin-inline-start: 5px;
+}
+
+/* Media Quires for width and date of join gap problem only */
+@media (min-width: 45em) {
+  main {
+    width: 573px;
+  }
+}
+@media (min-width: 56em) {
+  main {
+    width: 730px;
+  }
 }
