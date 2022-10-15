@@ -31,8 +31,11 @@ const Months = [
 
 // This function is for only removing whtie space in between name from input 
 function InputName() {
-    const InputName = Input.value;
-    const SearchName = InputName.split(' ').join('')
+    const Inputkey = Input.value;
+    const SearchName = Inputkey.split(' ').join('')
+    if(SearchName == '') {
+        return 
+    }
     return SearchName;
 }
 
@@ -42,9 +45,12 @@ function api() {
     .then((result) => result.json())
     .then((data)=> {
         console.log(data);
+        console.log(NoResult.innerText)
         UpdateProfile(data);
-        if(data.message == 'Not Found') {
-            NoResult.classList.remove('.none')
+        
+        if(data.name == null) {
+            UserName.innerHTML = `${data.login}`;
+            // NoResult.style.display = 'none'
         }
     })
     .catch((error) => {
@@ -52,15 +58,37 @@ function api() {
     })
 }
 
+// For enabling the enter key of keyboard 
+Input.addEventListener("keydown", function(e) {
+    if(!e) {
+        var e = window.event;
+    }
+    if(e.key == "Enter") {
+        if(InputName() !== "") {
+            api();
+        }
+    }
+},false)
+
+function checknull (param1, param2) {
+    if(param1 === '' || param1 === null) {
+        param2.style.opacity = '0.5';
+        param2.previousElementSibling.style.opacity = '0.5';
+        param2.previousElementSibling.style.scale = '0.9';
+        return "Not Available";
+    } else {
+        param2.style.opacity = '1';
+        param2.previousElementSibling.style.opacity = '1';
+        param2.previousElementSibling.style.scale = '1';
+        return `${param1}`;
+    }
+}
 // Updating the Profile function 
 function UpdateProfile(data) {
     AvatarImg.forEach((avatar) => {
         avatar.src = `${data.avatar_url}`;
     });
     UserName.innerHTML = `${data.name}`;
-    if(data.name == null) {
-        UserName.innerHTML = `${data.login}`;
-    }
     UserLink.innerHTML = `@${data.login}`;
     UserLink.href = `${data.html_url}`;
     Bio.innerHTML = `${data.bio}`;
@@ -70,24 +98,24 @@ function UpdateProfile(data) {
     Repo.innerHTML = `${data.public_repos}`;
     Followers.innerHTML = `${data.followers}`;
     Following.innerHTML = `${data.following}`;
-    LocaTion.innerHTML = `${data.location}`;
-    if(LocaTion.innerHTML == 'null') {
-        LocaTion.innerHTML = 'Not Available'
-    }
-    Twitter.innerHTML = `${data.twitter_username}`;
+    LocaTion.innerHTML = checknull(data.location, LocaTion);
+    // if(LocaTion.innerHTML == 'null') {
+    //     LocaTion.innerHTML = 'Not Available'
+    // }
+    Twitter.innerHTML = checknull(data.twitter_username, Twitter);
     Twitter.href = `https://twitter.com/${data.twitter_username}`;
-    if(Twitter.innerHTML == 'null') {
-        Twitter.innerHTML = 'Not Available'
-    }
-    Website.innerHTML = `${data.blog}`;
+    // if(Twitter.innerHTML == 'null') {
+    //     Twitter.innerHTML = 'Not Available'
+    // }
+    Website.innerHTML = checknull(data.blog, Website);
     Website.href = `${data.blog}`;
-    if(Website.innerHTML == '') {
-        Website.innerHTML = 'Not Available'
-    }
-    Company.innerHTML = `${data.company}`;
-    if(Company.innerHTML == 'null') {
-        Company.innerHTML = 'Not Available'
-    }
+    // if(Website.innerHTML == '') {
+    //     Website.innerHTML = 'Not Available'
+    // }
+    Company.innerHTML = checknull(data.company, Company);
+    // if(Company.innerHTML == 'null') {
+    //     Company.innerHTML = 'Not Available'
+    // }
     let datasegment = data.created_at.split('T').shift().split('-')
     console.log(datasegment)
     DateofJoin.innerHTML = `Joined ${datasegment[2]} ${datasegment[1]} ${datasegment[0]}`;
