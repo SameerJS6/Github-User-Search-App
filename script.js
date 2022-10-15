@@ -141,6 +141,7 @@ SubmitBtn.addEventListener('click', ()=> {
 
 // For Theme Switching Only 
 const body = document.getElementById('body');
+const Preloader = document.querySelector('[data-preloader]');
 const ThemeButton = document.querySelector('.theme-select');
 const DarkButton = document.querySelector('.theme');
 const lightButton = document.querySelector('.light');
@@ -156,4 +157,9 @@ ThemeButton.addEventListener('click', ()=> {
     Sun.classList.toggle('none')
 
     body.classList.toggle('DarkMode');
+})
+
+// For Loader here
+window.addEventListener('load', ()=> {
+    Preloader.style.display = 'none'
 })
