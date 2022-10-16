@@ -6,8 +6,11 @@
     --text-400: #697C9A;
     --text-700: #4B6A9B;
     --text-800: #2B3442;
-    --text-no-result: #F74646;
+    --text-no-result: hsl(0, 92%, 55%);
     --text-white: #ffffff;
+    --location-hover: #00754B;
+    --website-hover: hsl(46, 100%, 59%);
+    --company-hover: hsl(241, 77%, 55%);
 
 
     --primary-bg: #F6F8FF;
@@ -42,7 +45,10 @@
   --text-400: #ffffff;
   --text-700: #ffffff;
   --text-800: #ffffff;
-  --text-no-result: hsl(0, 92%, 55%);
+  --text-no-result: hsl(0, 92%, 65%);
+  --location-hover: #009063;
+  --website-hover: hsl(60, 92%, 71%);
+  --company-hover: hsl(241, 77%, 73%);
 
   --primary-bg: #141D2F;
   --secondary-bg: #1E2A47;
@@ -201,11 +207,26 @@ main {
     text-transform: uppercase;
     font-size: var(--size-400);
     transition: var(--ff-primary-transition);
+  }
+  /* SVGs */
+  .sun {
+    fill: #ffffff;
+    transition: var(--ff-primary-transition);
+  }
+  .moon {
+    fill: #697C9A;
+    transition: var(--ff-primary-transition);
 }
+/* Hover's for theme select and svgs  */
 .theme-select h3:hover {
     color: var(--ff-hover);
 }
-
+.theme-select:hover .sun {
+  fill: var(--ff-hover);
+}
+.theme-select:hover .moon {
+  fill: var(--ff-hover);
+}
 /* Search Box  */
 .search-box {
   position: relative;
@@ -242,6 +263,14 @@ input {
     width: 73%;
     display: flex;
     align-items: center;
+}
+.search-icon {
+  fill: #0079ff;
+  transition: var(--ff-secondray-transition);
+}
+.icon-bar:focus-within .search-icon {
+  fill: #006ae4;
+  transform: rotate(10deg) scale(1.02) translateY(-2px);
 }
 /* For No result Only */
 .btn-no-result {
@@ -326,7 +355,6 @@ input {
   border: none;
   max-width: 70px;
   border-radius: 50%;
-  /* box-shadow: 0 30px 45px rgba(23, 23, 23, 0.1); */
 }
 .desktop-avatar:hover, .profile-img:hover {
   transform: scale(1.1);
@@ -339,6 +367,7 @@ input {
     max-width: 125px;
 }
 }
+
 /* Profile  */
 .profile {
   gap: 1rem;
@@ -464,6 +493,48 @@ input {
   color: var(--text-700);
   font-size: var(--size-400);
   font-weight: var(--fw-reg);
+  transition: var(--ff-secondray-transition);
+}
+.detail-box-content:hover {
+  transform: translateY(-2px);
+}
+.detail-box-content:hover .detail-box-icons {
+  transform: scale(1.1);
+  animation: updown 1.15s ease-out infinite;
+  filter: drop-shadow(0 15px 25px rgb(22, 22, 22, 0.1));
+}
+.detail-box-icons {
+  fill: #4b6a9b;
+  transition: var(--ff-primary-transition);
+}
+/* Pulsing animation for svgs  */
+@keyframes updown {
+  0% {
+    transform-origin: center;
+    transform: scale(1) translateY(0px);
+  }
+  50% {
+    transform-origin: center;
+    transform: scale(1.03) translateY(-3px);
+  }
+  100% {
+    transform-origin: center;
+    transform: scale(1) translateY(1px);
+  }
+}
+
+/* Socials svg color hover  */
+.detail-box-content:hover .location {
+  fill: var(--location-hover);
+}
+.detail-box-content:hover .twitter-icon {
+  fill: var(--primary-400);
+}
+.detail-box-content:hover .website {
+  fill: var(--website-hover);
+}
+.detail-box-content:hover .company {
+  fill: var(--company-hover);
 }
 .detail-box-content a {
   text-decoration: none;
@@ -616,4 +687,20 @@ input {
   to {
      transform: rotate(360deg);
   }
+}
+
+.error {
+  opacity: 0;
+  display: none;
+  transition: var(--ff-secondray-transition);
+}
+.error img {
+  margin-inline: auto;
+  filter: drop-shadow(0 25px 45px rgb(22, 22, 22, 0.15));
+}
+.error h1 {
+  text-align: center;
+  font-size: var(--size-800);
+  font-weight: var(--fw-bold);
+  color: var(--text-no-result)
 }
