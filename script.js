@@ -45,8 +45,6 @@ function api() {
   fetch("https://api.github.com/users/" + InputName())
     .then((result) => result.json())
     .then((data) => {
-      console.log(data);
-      console.log(NoResult.innerText);
       UpdateProfile(data);
     })
     .catch((error) => {
