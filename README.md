@@ -55,11 +55,11 @@ Once I was done with it, I started setting up the custom properties for everythi
 
 - FlexBox
 - CSS Grid
-- CSS Animation 
 - ES6 Pratices
+- CSS Animation 
+- CSS Custom Properties
 - Mobile First Workflow
 - Semantic HTML5 Markup
-- CSS Custom Properties
 
 ### What I learned
 
